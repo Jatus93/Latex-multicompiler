@@ -1,6 +1,6 @@
-name: 'Latex-multy-compiler'
+name: 'Latex-multicompiler'
 author: 'Gianmarco Pettinato <gianmarco.pettinato@gmail.com>'
-description: 'Latex multy compiler reads form .fileToCompile the list of file to compile'
+description: 'Latex multicompiler reads form .fileToCompile the list of file to compile'
 runs:
   using: 'docker'
   image: 'Dockerfile'

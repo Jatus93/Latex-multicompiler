@@ -1,4 +1,4 @@
-# Latex multy compiler
+# Latex multicompiler
 This action compiles multiple latex files in your project
 
 ## Inputs
