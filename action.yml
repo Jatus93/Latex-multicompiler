@@ -1,0 +1,9 @@
+name: 'Latex-multy-compiler'
+author: 'Gianmarco Pettinato <gianmarco.pettinato@gmail.com>'
+description: 'Latex multy compiler reads form .fileToCompile the list of file to compile'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+branding:
+  color: 'orange'
+  icon: 'alert-octagon'
