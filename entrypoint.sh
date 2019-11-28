@@ -2,4 +2,4 @@
 while IFS= read -r texfile
 do
     latexmk -pdf -interaction=nonstopmode $texfile
-done < /github/home/.fileToCompile
+done < .fileToCompile
