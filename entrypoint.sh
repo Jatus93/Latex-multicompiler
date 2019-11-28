@@ -1,6 +1,5 @@
 #!/bin/sh
-cd "/github/home"
-while IFS= read -r line
+while IFS= read -r texfile
 do
-    latexmk -pdf -interaction=nonstopmode /github/home/${line}/main.tex
+    latexmk -pdf -interaction=nonstopmode $texfile
 done < /github/home/.fileToCompile
