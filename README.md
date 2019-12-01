@@ -5,7 +5,7 @@ This action compiles multiple latex files in your project
 **required** .fileToCompile in the root of your project
 
 ## Options
-** -r ** to create a release package in github/workspace/Documents.tar.gz
+**-r** to create a release package in github/workspace/Documents.tar.gz
 
 ## Outputs
 Result of the command latexmk -pdf -interaction=nonstopmode -f "your file"
