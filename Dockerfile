@@ -1,4 +1,7 @@
-FROM danteev/texlive
+FROM ubuntu
+
+RUN apt update \
+  && apt install -y latexmk
 
 COPY entrypoint.sh /entrypoint.sh
 
