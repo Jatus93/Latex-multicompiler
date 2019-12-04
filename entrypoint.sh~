@@ -1,11 +1,12 @@
 #!/bin/sh
+cd /github/workspace
 mkdir Documents
 while IFS= read -r path
 do
-    w_dir=pwd
+    ##w_dir=pwd
     docName="$(dirname $path)"
     cd $path && latexmk -pdf -interaction=nonstopmode main.tex
-    cd $w_dir;
+    cd /github/workspace;
     if [ "$1" == "-r" ]; then
       mv $path/main.pdf ./Documents/$docName.pdf
     fi
