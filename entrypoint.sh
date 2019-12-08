@@ -2,8 +2,9 @@
 mkdir Documents
 while IFS= read -r path
 do
-    w_dir=pwd
-    docName="$(dirname $path)"
+    docName="${path%"${path##*[!/]}"}"
+    docName="${docName##*/}"
+    w_dir=${PWD}
     cd $path && latexmk -pdf -interaction=nonstopmode main.tex
     cd $w_dir;
     if [ "$1" == "-r" ]; then
