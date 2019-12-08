@@ -1,5 +1,7 @@
 #!/bin/sh
-mkdir Documents
+if [ "${INPUT_BUILD}" == true ]; then
+  mkdir Documents
+fi
 while IFS= read -r path
 do
     docName="${path%"${path##*[!/]}"}"
@@ -7,11 +9,11 @@ do
     w_dir=${PWD}
     cd $path && latexmk -pdf -interaction=nonstopmode main.tex
     cd $w_dir;
-    if [ "$1" == "-r" ]; then
+    if [ "${INPUT_BUILD}" == true ]; then
       mv $path/main.pdf ./Documents/$docName.pdf
     fi
 done < .fileToCompile
 
-if [ "$1" == "-r" ]; then
+if [ "${INPUT_BUILD}" == true ]; then
   tar -czvf Documents.tar.gz Documents/*
 fi
