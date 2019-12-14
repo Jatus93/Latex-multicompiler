@@ -1,5 +1,5 @@
 #!/bin/sh
-if [ "${INPUT_BUILD}" == true ]; then
+if [ "${INPUT_ARTIFACT}" == true ]; then
   mkdir Documents
 fi
 
