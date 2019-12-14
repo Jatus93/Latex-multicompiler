@@ -10,20 +10,20 @@ do
     docName="${path%"${path##*[!/]}"}"
     docName="${docName##*/}"
     w_dir=${PWD}
-    cd $path 
+    cd $path
     latexmk -pdf -interaction=nonstopmode main.tex
     result=$?
-    if [ $result != 0 ]; then 
-	failed[i]=$docName
-	i=i+1
+    if [ $result != 0 ]; then
+       failed[i]=$docName
+	     i=i+1
     fi
     cd $w_dir;
     if [ "${INPUT_BUILD}" == true ]; then
           mv $path/main.pdf ./Documents/$docName.pdf
     fi
-done < .fileToCompile
+done < "${INPUT_PATH_TO_LIST}"
 
-if [ "${INPUT_BUILD}" == true ]; then
+if [ "${INPUT_ARTIFACT}" == true ]; then
     tar -czvf Documents.tar.gz Documents/*
 fi
 
