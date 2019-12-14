@@ -18,7 +18,7 @@ do
 	     i=i+1
     fi
     cd $w_dir;
-    if [ "${INPUT_BUILD}" == true ]; then
+    if [ "${INPUT_ARTIFACT}" == true ]; then
           mv $path/main.pdf ./Documents/$docName.pdf
     fi
 done < "${INPUT_PATH_TO_LIST}"
