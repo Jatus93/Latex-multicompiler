@@ -5,7 +5,7 @@ fi
 
 declare -A failed
 i=0
-while IFS= read -r path
+while IFS= read -r path || [ -n "$path" ]
 do
     docName="${path%"${path##*[!/]}"}"
     docName="${docName##*/}"
